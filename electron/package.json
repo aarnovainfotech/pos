@@ -1,0 +1,35 @@
+{
+  "name": "smart-pos",
+  "version": "1.0.0",
+  "description": "Smart POS Desktop App",
+  "author": "SmartPOS",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "32.2.0",
+    "electron-builder": "^26.7.0"
+  },
+  "build": {
+    "appId": "com.smartpos.app",
+    "productName": "Smart POS",
+    "asar": true,
+    "files": [
+      "**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "../backend",
+        "to": "backend"
+      },
+      {
+        "from": "../frontend/dist",
+        "to": "frontend"
+      }
+    ],
+    "mac": {
+      "target": "dmg"
+    }
+  },
+  "scripts": {
+    "build": "electron-builder"
+  }
+}
